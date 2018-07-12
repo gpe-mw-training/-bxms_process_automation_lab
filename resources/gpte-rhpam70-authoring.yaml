@@ -461,6 +461,12 @@ objects:
             value: "${KIE_ADMIN_USER}"
           - name: KIE_ADMIN_PWD
             value: "${KIE_ADMIN_PWD}"
+
+          # JA Bride
+          # As per Duncan request to support his case mgmt lab
+          - name: KIE_ADMIN_ROLES
+            value: "kie-server,rest-all,admin,kiemgmt,Administrators,manager,broker,appraiser"
+
           - name: KIE_MBEANS
             value: "${KIE_MBEANS}"
           - name: KIE_SERVER_CONTROLLER_USER
