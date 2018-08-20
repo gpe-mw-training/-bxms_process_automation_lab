@@ -650,6 +650,10 @@ objects:
             value: "${KIE_SERVER_CONTROLLER_PWD}"
           - name: KIE_SERVER_CONTROLLER_SERVICE
             value: "${APPLICATION_NAME}-rhpamcentr"
+# dtorresf: the new authoring template defines the controller protocol as web sockets
+# https://github.com/jboss-container-images/rhpam-7-openshift-image/blob/rhpam70-dev/templates/rhpam70-authoring.yaml#L800
+          - name: KIE_SERVER_CONTROLLER_PROTOCOL
+            value: "ws"
           - name: KIE_SERVER_ID
             value: "${KIE_SERVER_ID}"
           - name: KIE_SERVER_HOST
