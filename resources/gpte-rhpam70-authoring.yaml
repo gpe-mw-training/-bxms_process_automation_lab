@@ -12,7 +12,7 @@ metadata:
   name: rhpam70-authoring
 labels:
   template: rhpam70-authoring
-  rhpam: 1.2
+  rhpam: "1.2"
 message: A new persistent Process Automation Manager application have been created in your project.
   The username/password for accessing the KIE Server / Business Central interface is ${KIE_ADMIN_USER}/${KIE_ADMIN_PWD}.
   Please be sure to create the secrets named "${BUSINESS_CENTRAL_HTTPS_SECRET}" and "${KIE_SERVER_HTTPS_SECRET}" containing the
@@ -184,7 +184,7 @@ parameters:
   description: A named pointer to an image in an image stream. Default is "1.2".
   name: IMAGE_STREAM_TAG
   value: "1.2"
-  required: false
+  required: true
 - displayName: Maven repository URL
   description: Fully qualified URL to a Maven repository or service.
   name: MAVEN_REPO_URL
@@ -799,8 +799,6 @@ objects:
             value: "${KIE_SERVER_CONTROLLER_PWD}"
           - name: KIE_SERVER_CONTROLLER_SERVICE
             value: "${APPLICATION_NAME}-rhpamcentr"
-# dtorresf: the new authoring template defines the controller protocol as web sockets
-# https://github.com/jboss-container-images/rhpam-7-openshift-image/blob/rhpam70-dev/templates/rhpam70-authoring.yaml#L800
           - name: KIE_SERVER_CONTROLLER_PROTOCOL
             value: "ws"
           - name: KIE_SERVER_ID
