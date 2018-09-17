@@ -84,6 +84,34 @@
             }
          ],
          "realmRoles":[
+            "Administrators",
+            "admin",
+            "kie-server",
+            "kiemgmt",
+            "rest-all"
+         ],
+         "clientRoles":{
+            "account":[
+               "view-profile",
+               "manage-account"
+            ]
+         },
+         "groups":[
+            "supplier",
+            "analyst",
+            "manager"
+         ]
+      },{
+         "username":"controlleruser",
+         "enabled":true,
+         "email":"controller@openshift.opentlc.com",
+         "credentials":[
+            {
+               "type":"password",
+               "value":"test1234!"
+            }
+         ],
+         "realmRoles":[
             "admin",
             "kie-server",
             "kiemgmt",
@@ -210,6 +238,13 @@
          },
          {
             "name":"admin",
+            "scopeParamRequired":false,
+            "composite":false,
+            "clientRole":false,
+            "containerId":"kie-realm"
+         },
+         {
+            "name":"Administrators",
             "scopeParamRequired":false,
             "composite":false,
             "clientRole":false,
